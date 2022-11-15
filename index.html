@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya Potfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/5d4f239bca.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="contaier">
+            <nav>
+                <img src="images/logo.png" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Industrial Training</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fas fa-times" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Software Developer</p>
+                <h1>Hi, I'm <span>Aditya</span><br>Kr. Srivastava From India</h1>
+            </div>
+        </div>
+    </div>
+    <!-- ---------------about--------------  -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/user.png">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>My Career objective is to work sincerely, to achieve a good
+                        position in a company, seeking a challenging position to
+                        utilize my skills and abilities in the information technology
+                        industry.</p>
+
+                        <div class="tab-titles">
+                            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                            <p class="tab-links" onclick="opentab('experience')">Publication</p>
+                            <p class="tab-links" onclick="opentab('education')">Education</p>
+                        </div>
+                        <div class="tab-contents active-tab" id="skills">
+                            <ul>
+                                <li><span>AWS/GCP</span> Intermediate</li>
+                                <li><span>Machine Learning</span> Basic</li>
+                                <li><span>Software Developmen</span> Basic</li>
+                                <li><span>Web Development</span> Basic</li>
+                                <li><span>Python programming</span> Intermediate</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="experience">
+                            <ul>
+                                <li><span>IJIRE </span> Aditya Kumar Srivastava, et.al., <br> "Virtual Graphic Creator by Sensing Hand Motion", Vol: 06/Issue:06(Nov-Dec 2022).</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="education">
+                            <ul>
+                                <li><span>B.E/B.tech (Computer Science & Engineering)</span> from Institute of Technology and Management, Gorakhpur, U.P(2019-23)</li>
+                                <li><span>Intermediate</span> from M.G Inter College, Gorakhpur, U.P(2017-19)</li>
+                                <li><span>High School</span> from M.G Inter College, Gorakhpur, U.P(2015-17)</li>
+                            </ul>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ---------------My Project-------------- -->
+    <div id="services">
+        <div class="container">
+            <h1 class="sub-title">Industrial Training</h1>
+            <div class="services-list">
+                <div>
+                    <i class="fa-brands fa-aws"></i>
+                    <h2>AWS Solution Architect Associate</h2>
+                    <p>The work consisted of Amazon EC2, Amazon EBS, Amazon Storage Services S3, Cloud Watch & SNS, AWS VPC, Identity and IAM, Amazon Relational Database Service, Multiple AWS Services and Managing the Resources' Life cycle, AWS, AWS Architecture and Design</p>
+                    <a href="https://drive.google.com/file/d/1ARMMI23molZMRhmZQPcB1j2h5t0GhrIt/view?usp=sharing">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-cloud"></i>
+                    <h2>Google Cloud Fundamental</h2>
+                    <p>The work consisted of Google Computer Engine, Google App Engine.</p>
+                    <a href="https://coursera.org/share/76a1753ee0ba7ef3963ebb1107a08e47">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-brands fa-google"></i>
+                    <h2>GCP BootCamp</h2>
+                    <p>This work consisted of GCP DevOps Engineer.</p>
+                    <a href="https://www.cloudskillsboost.google/public_profiles/8ed3f936-7b43-4edc-a36f-ec84cb01814a">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-sharp fa-solid fa-code"></i>
+                    <h2>Web Development</h2>
+                    <p>The work consisted of HTML, CSS, Bootstrap, DBMS, PHP, JS, React</p>
+                    <a href="https://trainings.internshala.com/s/v/230770/5a1fa95d">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-code-compare"></i>
+                    <h2>Machine Learning</h2>
+                    <p>The work consisted of Machine Learning, Data, Introduction to Python, Data Exploration and Preprocessing, Linear Regression, Introduction to Dimensionality Reduction, Logistic Regression, Decision Tree, Ensemble Models and Clustering (Unsupervised Learning) modules</p>
+                    <a href="https://trainings.internshala.com/s/v/37567/793f7e1f">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-brands fa-aws"></i>
+                    <h2>AWS Machine Learning</h2>
+                    <p>The work consisted of Artificial Intelligence (AI), Machine Learning, Amazon Sage Maker, Natural Language Processing (NLP), Computer Vision.</p>
+                    <a href="https://coursera.org/share/99756d481a237f383f034401cde14855">Learn more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- --------------------portfolio---------------- -->
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">My Works</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="images/work-1.png">
+                    <div class="layer">
+                        <h3>Virtual Graphic Creator by Sensing Hand Motion</h3>
+                        <p>Virtual AI painter using OpenCV and Mediapipe is an application that tracks the movement of an object. Using this tracking feature, the user can draw on the screen by moving the object (which in our project is the human hand) in the air, in front of the webcam. Virtual Painter is a painting app but not a normal painting app.</p>
+                        <a href="https://github.com/AdityaSrivastava037/VirtualPainting.git"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/work-2.png">
+                    <div class="layer">
+                        <h3>Proxy call</h3>
+                        <p>This is use to send an anonymous message to a person. With the help of this project, we can send messages to the receiver and the receiver couldn’t know who send this message at a time this type of project is use in a call center.</p>
+                        <a href="https://github.com/AdityaSrivastava037/Proxy-call.git"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/work-3.png">
+                    <div class="layer">
+                        <h3>Food Delivery Website</h3>
+                        <p>An online food ordering system or an online ordering platform is a place where customers can directly order from the restaurant instead of going through a third-party food delivery business. It is a web-based ordering system where customers using a mobile app can use the online user interface to order online.</p>
+                        <a href="https://github.com/AdityaSrivastava037/Food-Website.git"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+            <a href="https://github.com/AdityaSrivastava037" class="btn">See more</a>
+        </div>
+    </div>
+    <!-- -----------------------contact------------- -->
+    <div class="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fa-solid fa-paper-plane"></i>adityakumarsrivastava037@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i>09565318236</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/aditya.srivastava.967806"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.linkedin.com/in/aditya-kumar-srivastava-4a52a41a3/"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/adityakumarsrivasta/"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://twitter.com/Aditya_lala_037"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                    <a href="images/my-cv.pdf" download class="btn btn2">Download CV</a>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+ <script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
+<script>
+    var sidemenu = document.getElementById("sidemenu")
+
+    function openmenu(){
+        sidemenu.style.right = "0";
+    }
+    function closemenu(){
+        sidemenu.style.right = "-200px";
+    }
+</script>
+
+<footer>
+    <div class="center">
+        Copyright &copy; Aditya Kr Srivastava. All rights reserved!
+    </div>
+</footer>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxxg61qa5iq6vvqNu2zTrUKn_6yE0Uxn60Jy_atG2OS_UI_N3Bg8A0Piv_-v8Ggc3Qytw/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully!"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+</body>
+</html>
