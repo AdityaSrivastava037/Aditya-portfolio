@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Demo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #080808; color: #fff; font-family: 'Poppins', sans-serif; padding: 40px 20px; }
+        h1 { text-align: center; margin-bottom: 50px; font-size: 28px; color: #ababab; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+
+        .card {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 14px;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        .card-label {
+            font-size: 13px;
+            color: #ababab;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 24px;
+        }
+        .name { font-size: 22px; font-weight: 700; margin-bottom: 10px; }
+        .name span { color: #ff004f; }
+        .role-wrap { height: 52px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        .role { font-size: 26px; font-weight: 600; }
+
+        /* ── 1. TYPEWRITER ── */
+        #tw-text { color: #ff004f; }
+        .cursor { color: #ff004f; animation: blink .7s infinite; }
+        @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+        /* ── 2. FLIP ── */
+        .flip-wrap { perspective: 400px; }
+        .flip-inner {
+            color: #ff004f;
+            display: inline-block;
+            animation: flipIn 0.6s ease forwards;
+        }
+        @keyframes flipIn {
+            0%   { transform: rotateX(-90deg); opacity: 0; }
+            100% { transform: rotateX(0deg);   opacity: 1; }
+        }
+        .flip-inner.flip-out {
+            animation: flipOut 0.4s ease forwards;
+        }
+        @keyframes flipOut {
+            0%   { transform: rotateX(0deg);   opacity: 1; }
+            100% { transform: rotateX(90deg);  opacity: 0; }
+        }
+
+        /* ── 3. SLIDE UP ── */
+        .slide-wrap { overflow: hidden; height: 52px; display: flex; align-items: center; justify-content: center; }
+        .slide-text {
+            color: #ff004f;
+            display: inline-block;
+            animation: slideIn 0.5s cubic-bezier(.22,.61,.36,1) forwards;
+        }
+        @keyframes slideIn {
+            0%   { transform: translateY(100%); opacity: 0; }
+            100% { transform: translateY(0);    opacity: 1; }
+        }
+        .slide-text.slide-out {
+            animation: slideOut 0.4s ease forwards;
+        }
+        @keyframes slideOut {
+            0%   { transform: translateY(0);     opacity: 1; }
+            100% { transform: translateY(-100%); opacity: 0; }
+        }
+
+        /* ── 4. FADE ── */
+        .fade-text {
+            color: #ff004f;
+            animation: fadeIn 0.8s ease forwards;
+        }
+        @keyframes fadeIn {
+            0%   { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        .fade-text.fade-out {
+            animation: fadeOut 0.6s ease forwards;
+        }
+        @keyframes fadeOut {
+            0%   { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        /* ── 5. GLITCH ── */
+        .glitch-text {
+            color: #ff004f;
+            position: relative;
+        }
+        .glitch-text.glitching {
+            animation: glitch 0.4s steps(1) forwards;
+        }
+        @keyframes glitch {
+            0%  { text-shadow: 2px 0 #0ff, -2px 0 #f0f; transform: skewX(-5deg); }
+            20% { text-shadow: -2px 0 #0ff,  2px 0 #f0f; transform: skewX(5deg); }
+            40% { text-shadow: 2px 0 #f0f, -2px 0 #0ff;  transform: skewX(-3deg); }
+            60% { text-shadow: -1px 0 #0ff, 1px 0 #f0f;  transform: skewX(3deg); }
+            80% { text-shadow: 1px 0 #f0f, -1px 0 #0ff;  transform: skewX(-1deg); }
+            100%{ text-shadow: none; transform: skewX(0); }
+        }
+    </style>
+</head>
+<body>
+    <h1>Animation Demo — Pick your favourite</h1>
+    <div class="grid">
+
+        <!-- 1. Typewriter -->
+        <div class="card">
+            <div class="card-label">1 · Typewriter</div>
+            <div class="name">Hi, I'm <span>Aditya</span></div>
+            <div class="role-wrap">
+                <div class="role"><span id="tw-text"></span><span class="cursor">|</span></div>
+            </div>
+        </div>
+
+        <!-- 2. Flip -->
+        <div class="card">
+            <div class="card-label">2 · Flip</div>
+            <div class="name">Hi, I'm <span>Aditya</span></div>
+            <div class="role-wrap flip-wrap">
+                <div class="role flip-inner" id="flip-text">DevOps Engineer</div>
+            </div>
+        </div>
+
+        <!-- 3. Slide Up -->
+        <div class="card">
+            <div class="card-label">3 · Slide Up</div>
+            <div class="name">Hi, I'm <span>Aditya</span></div>
+            <div class="role-wrap slide-wrap">
+                <div class="role slide-text" id="slide-text">DevOps Engineer</div>
+            </div>
+        </div>
+
+        <!-- 4. Fade -->
+        <div class="card">
+            <div class="card-label">4 · Fade</div>
+            <div class="name">Hi, I'm <span>Aditya</span></div>
+            <div class="role-wrap">
+                <div class="role fade-text" id="fade-text">DevOps Engineer</div>
+            </div>
+        </div>
+
+        <!-- 5. Glitch -->
+        <div class="card">
+            <div class="card-label">5 · Glitch</div>
+            <div class="name">Hi, I'm <span>Aditya</span></div>
+            <div class="role-wrap">
+                <div class="role glitch-text" id="glitch-text">DevOps Engineer</div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const roles = ["DevOps Engineer", "Cloud Engineer"];
+
+        /* ── 1. Typewriter ── */
+        (function(){
+            let i = 0, c = 0, del = false;
+            const el = document.getElementById("tw-text");
+            function tick(){
+                const word = roles[i];
+                el.textContent = del ? word.slice(0, c--) : word.slice(0, c++);
+                let delay = del ? 60 : 100;
+                if (!del && c === word.length + 1){ delay = 1800; del = true; }
+                else if (del && c < 0){ del = false; i = (i+1) % roles.length; c = 0; delay = 400; }
+                setTimeout(tick, delay);
+            }
+            tick();
+        })();
+
+        /* ── 2. Flip ── */
+        (function(){
+            let i = 0;
+            const el = document.getElementById("flip-text");
+            function cycle(){
+                el.classList.add("flip-out");
+                setTimeout(()=>{
+                    i = (i+1) % roles.length;
+                    el.textContent = roles[i];
+                    el.classList.remove("flip-out");
+                    void el.offsetWidth; // reflow
+                    el.style.animation = "none";
+                    void el.offsetWidth;
+                    el.style.animation = "";
+                }, 400);
+                setTimeout(cycle, 2800);
+            }
+            setTimeout(cycle, 2000);
+        })();
+
+        /* ── 3. Slide Up ── */
+        (function(){
+            let i = 0;
+            const el = document.getElementById("slide-text");
+            function cycle(){
+                el.classList.add("slide-out");
+                setTimeout(()=>{
+                    i = (i+1) % roles.length;
+                    el.textContent = roles[i];
+                    el.classList.remove("slide-out");
+                    el.style.animation = "none";
+                    void el.offsetWidth;
+                    el.style.animation = "";
+                }, 400);
+                setTimeout(cycle, 2800);
+            }
+            setTimeout(cycle, 2000);
+        })();
+
+        /* ── 4. Fade ── */
+        (function(){
+            let i = 0;
+            const el = document.getElementById("fade-text");
+            function cycle(){
+                el.classList.add("fade-out");
+                setTimeout(()=>{
+                    i = (i+1) % roles.length;
+                    el.textContent = roles[i];
+                    el.classList.remove("fade-out");
+                    el.style.animation = "none";
+                    void el.offsetWidth;
+                    el.style.animation = "";
+                }, 600);
+                setTimeout(cycle, 2800);
+            }
+            setTimeout(cycle, 2000);
+        })();
+
+        /* ── 5. Glitch ── */
+        (function(){
+            let i = 0;
+            const el = document.getElementById("glitch-text");
+            const chars = "!@#$%^&*<>?/|";
+            function scramble(target, cb){
+                let iter = 0;
+                const interval = setInterval(()=>{
+                    el.textContent = target.split("").map((c, idx) =>
+                        idx < iter ? c : chars[Math.floor(Math.random()*chars.length)]
+                    ).join("");
+                    el.classList.add("glitching");
+                    if(iter >= target.length){
+                        clearInterval(interval);
+                        el.textContent = target;
+                        el.classList.remove("glitching");
+                        cb && cb();
+                    }
+                    iter += 1;
+                }, 40);
+            }
+            function cycle(){
+                i = (i+1) % roles.length;
+                scramble(roles[i], ()=> setTimeout(cycle, 2400));
+            }
+            setTimeout(()=> scramble(roles[0], ()=> setTimeout(cycle, 2400)), 200);
+        })();
+    </script>
+</body>
+</html>

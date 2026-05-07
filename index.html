@@ -5,18 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aditya Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/5d4f239bca.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="header">
-        <div class="contaier">
+        <div class="container">
             <nav>
                 <img src="images/logo.png" class="logo">
                 <ul id="sidemenu">
                     <li><a href="#header">Home</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#services">Industrial Training</a></li>
+                    <li><a href="#work-experience">Experience</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <i class="fas fa-times" onclick="closemenu()"></i>
@@ -24,8 +28,8 @@
                 <i class="fa-solid fa-bars" onclick="openmenu()"></i>
             </nav>
             <div class="header-text">
-                <p>DevOps/Cloud Engineer</p>
-                <h1>Hi, I'm <span>Aditya</span><br>Kr. Srivastava From India</h1>
+                <h1>Hi, I'm <span>Aditya</span><br>Kr. Srivastava</h1>
+                <h2 class="typed-role"><span id="typed-text"></span></h2>
             </div>
         </div>
     </div>
@@ -38,84 +42,102 @@
                 </div>
                 <div class="about-col-2">
                     <h1 class="sub-title">About Me</h1>
-                    <p>My Career objective is to work sincerely, to achieve a good
-                        position in a company, seeking a challenging position to
-                        utilize my skills and abilities in the information technology
-                        industry.</p>
+                    <p>Results-driven Cloud &amp; DevOps Engineer with 2.5+ years of experience architecting scalable, secure, and cost-efficient solutions across AWS and Azure environments. Proven expertise in multi-cloud architectures, serverless applications, and DevSecOps-enabled CI/CD pipelines. Hands-on experience delivering AI/LLM-powered solutions using AWS SageMaker and Bedrock, including RAG-based architectures. Achieved 50–60% cost optimization through architectural improvements.</p>
 
                         <div class="tab-titles">
                             <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                            <p class="tab-links" onclick="opentab('experience')">Publication</p>
                             <p class="tab-links" onclick="opentab('education')">Education</p>
                         </div>
                         <div class="tab-contents active-tab" id="skills">
                             <ul>
-                                <li><span>AWS/GCP</span> Intermediate</li>
-                                <li><span>Cloud Computing</span> Intermediate</li>
-                                <li><span>DevOps</span> Intermediate</li>
-                                <li><span>Web Development</span> Basic</li>
-                                <li><span>Python programming</span> Intermediate</li>
-                            </ul>
-                        </div>
-                        <div class="tab-contents" id="experience">
-                            <ul>
-                                <li><span>IJARIIE </span> Aditya Kumar Srivastava, et.al., <br> "Virtual Graphic Creator by Sensing Hand Motion", Vol: 09/Issue:03(April-May 2023).</li>
-                            </ul>
-                            <ul>
-                                <li><span>IJIRE </span> Aditya Kumar Srivastava, et.al., <br> "Virtual Graphic Creator by Sensing Hand Motion", Vol: 06/Issue:06(Nov-Dec 2022).</li>
+                                <li><span>AWS / Azure / GCP</span> Multi-Cloud Architecture & Design</li>
+                                <li><span>DevOps & CI/CD</span> Jenkins, GitHub Actions, Azure DevOps</li>
+                                <li><span>Infrastructure as Code</span> Terraform, CloudFormation</li>
+                                <li><span>Containers</span> Docker, Kubernetes</li>
+                                <li><span>AI / LLM</span> AWS Bedrock, SageMaker, RAG Architecture</li>
+                                <li><span>DevSecOps</span> IAM, WAF, CIS Benchmarking</li>
+                                <li><span>Scripting</span> Python, Bash, JSON</li>
                             </ul>
                         </div>
                         <div class="tab-contents" id="education">
                             <ul>
-                                <li><span>B.E/B.tech (Computer Science & Engineering)</span> from Institute of Technology and Management, Gorakhpur, U.P(2019-23)</li>
-                                <li><span>Intermediate</span> from M.G Inter College, Gorakhpur, U.P(2017-19)</li>
-                                <li><span>High School</span> from M.G Inter College, Gorakhpur, U.P(2015-17)</li>
+                                <li><span>B.Tech (Computer Science & Engineering)</span> Dr. A.P.J. Abdul Kalam Technical University (2019–23)</li>
+                                <li><span>Intermediate</span> M.G Inter College, Gorakhpur, U.P (2017–19)</li>
+                                <li><span>High School</span> M.G Inter College, Gorakhpur, U.P (2015–17)</li>
                             </ul>
                         </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- ---------------My Project-------------- -->
-    <div id="services">
+    <!-- ---------------Work Experience-------------- -->
+    <div id="work-experience">
         <div class="container">
-            <h1 class="sub-title">Industrial Training</h1>
+            <h1 class="sub-title">Work Experience</h1>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h2>Cloud Engineer</h2>
+                            <span class="timeline-company"><i class="fa-solid fa-building"></i> NLB Services, Noida</span>
+                            <span class="timeline-date"><i class="fa-solid fa-calendar"></i> Sep 2023 – Present</span>
+                        </div>
+                        <ul class="timeline-points">
+                            <li>Designed end-to-end cloud architectures on AWS & Azure focusing on scalability, security, and reliability</li>
+                            <li>Implemented AWS Control Tower &amp; Azure Landing Zones for governance and compliance</li>
+                            <li>Built infrastructure using Terraform &amp; CloudFormation aligned with the Well-Architected Framework</li>
+                            <li>Delivered AI/LLM solutions using AWS SageMaker &amp; Bedrock with RAG architecture and vector databases</li>
+                            <li>Integrated DevSecOps practices into CI/CD pipelines (Jenkins, GitHub Actions, Azure DevOps)</li>
+                            <li>Architected secure SSO integrations using MS Entra ID + GitHub</li>
+                            <li>Owned L3 escalation management, root cause analysis (RCA), and resolution strategy</li>
+                            <li>Achieved 50–60% cost optimization through architectural improvements and resource right-sizing</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- --------------------certifications---------------- -->
+    <div id="certifications">
+        <div class="container">
+            <h1 class="sub-title">Certifications</h1>
             <div class="services-list">
                 <div>
-                    <i class="fa-solid fa-infinity"></i>
-                    <h2>DevOps</h2>
-                    <p>The work consisted of CI/CD pipeline, AWS Code deploy, Jenkins, Kubernetes, Docker, Containerization, Auto Scaling, Load Balancer</p>
-                    <a href="https://coursera.org/share/3d51e0877784e11c2c95e433ad48bb28">Learn more</a>
+                    <i class="fa-brands fa-microsoft"></i>
+                    <h2>Azure Administrator</h2>
+                    <p>Microsoft Certified: Azure Administrator Associate (AZ-104). Covers Azure identity, governance, storage, compute, and networking.</p>
+                    <a href="https://learn.microsoft.com/en-us/users/adityakumarsrivastava-4144/credentials/ba2c33bf1bbbc3ab?ref=https%3A%2F%2Fwww.linkedin.com%2F">View Certificate</a>
                 </div>
                 <div>
                     <i class="fa-brands fa-aws"></i>
-                    <h2>AWS Solution Architect Associate</h2>
-                    <p>The work consisted of Amazon EC2, Amazon EBS, Amazon Storage Services S3, Cloud Watch & SNS, AWS VPC, Identity and IAM, Amazon Relational Database Service, Multiple AWS Services and Managing the Resources' Life cycle, AWS, AWS Architecture and Design</p>
-                    <a href="https://drive.google.com/file/d/1ARMMI23molZMRhmZQPcB1j2h5t0GhrIt/view?usp=sharing">Learn more</a>
-                </div>
-                <div>
-                    <i class="fa-solid fa-cloud"></i>
-                    <h2>Google Cloud Fundamental</h2>
-                    <p>The work consisted of Google Computer Engine, Google App Engine.</p>
-                    <a href="https://coursera.org/share/76a1753ee0ba7ef3963ebb1107a08e47">Learn more</a>
+                    <h2>AWS Certified Solutions Architect – Associate</h2>
+                    <p>AWS Certified Solutions Architect – Associate. Covers designing distributed systems on AWS with security and cost-efficiency.</p>
+                    <a href="https://www.credly.com/badges/b4b81cf2-3c01-40b6-9112-90b2da127691/linked_in_profile">View Certificate</a>
                 </div>
                 <div>
                     <i class="fa-brands fa-google"></i>
-                    <h2>GCP BootCamp</h2>
-                    <p>This work consisted of GCP DevOps Engineer.</p>
-                    <a href="https://www.cloudskillsboost.google/public_profiles/8ed3f936-7b43-4edc-a36f-ec84cb01814a">Learn more</a>
+                    <h2>Google Cloud</h2>
+                    <p>Google Cloud: Cloud Architecture &amp; DevOps Essentials. Covers GCP infrastructure, deployment, and DevOps best practices.</p>
+                    <a href="https://www.cloudskillsboost.google/public_profiles/8ed3f936-7b43-4edc-a36f-ec84cb01814a">View Certificate</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-infinity"></i>
+                    <h2>DevOps</h2>
+                    <p>CI/CD pipeline, AWS Code Deploy, Jenkins, Kubernetes, Docker, Containerization, Auto Scaling, Load Balancer.</p>
+                    <a href="https://coursera.org/share/3d51e0877784e11c2c95e433ad48bb28">View Certificate</a>
                 </div>
                 <div>
                     <i class="fa-sharp fa-solid fa-code"></i>
                     <h2>Web Development</h2>
-                    <p>The work consisted of HTML, CSS, Bootstrap, DBMS, PHP, JS, React</p>
-                    <a href="https://trainings.internshala.com/s/v/230770/5a1fa95d">Learn more</a>
+                    <p>HTML, CSS, Bootstrap, DBMS, PHP, JavaScript, React — full-stack web development fundamentals.</p>
+                    <a href="https://trainings.internshala.com/s/v/230770/5a1fa95d">View Certificate</a>
                 </div>
                 <div>
                     <i class="fa-brands fa-python"></i>
                     <h2>Python</h2>
-                    <p>The work consisted of all the Python.</p>
-                    <a href="https://www.hackerrank.com/certificates/b8be105f6fed">Learn more</a>
+                    <p>Python programming fundamentals and problem solving, certified by HackerRank.</p>
+                    <a href="https://www.hackerrank.com/certificates/b8be105f6fed">View Certificate</a>
                 </div>
             </div>
         </div>
@@ -128,25 +150,25 @@
                 <div class="work">
                     <img src="images/work-1.png">
                     <div class="layer">
-                        <h3>Virtual Graphic Creator by Sensing Hand Motion</h3>
-                        <p>Virtual AI painter using OpenCV and Mediapipe is an application that tracks the movement of an object. Using this tracking feature, the user can draw on the screen by moving the object (which in our project is the human hand) in the air, in front of the webcam. Virtual Painter is a painting app but not a normal painting app.</p>
-                        <a href="https://github.com/AdityaSrivastava037/VirtualPainting.git"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <h3>AI-Powered Knowledge Assistant</h3>
+                        <p>Serverless AI architecture using AWS Bedrock, Lambda, and API Gateway. Implemented RAG (Retrieval-Augmented Generation) with vector database and prompt engineering for low-latency, cost-efficient AI inference.</p>
+                        <a href="https://github.com/AdityaSrivastava037"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>
                 </div>
                 <div class="work">
                     <img src="images/work-2.png">
                     <div class="layer">
-                        <h3>Hosting a normal Website </h3>
-                        <p> Hosting a normal Website with the use of some Cloud Computing tools. Like EC2, Lambda, Etc </p>
-                        <a href=""><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <h3>Multi-Cloud Landing Zone Architecture</h3>
+                        <p>Designed multi-account architecture using AWS Control Tower &amp; Azure Landing Zones. Implemented SSO (MS Entra ID + GitHub), governance policies, network segmentation, and CIS-aligned security controls.</p>
+                        <a href="https://github.com/AdityaSrivastava037"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>
                 </div>
                 <div class="work">
                     <img src="images/work-3.png">
                     <div class="layer">
-                        <h3>Creating all the DevOps Resources</h3>
-                        <p>Creating all the Resources Like Ci/Cd, Jenkins, Kubernetes, Docker, Containerization,Etc</p>
-                        <a href=""><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <h3>Cost-Optimized HA Architecture</h3>
+                        <p>Achieved 50–60% cost optimization through architecture redesign. Implemented auto-scaling, load balancing, and monitoring. Evaluated Reserved vs On-Demand vs Spot trade-offs for optimal resource efficiency.</p>
+                        <a href="https://github.com/AdityaSrivastava037"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>
                 </div>
             </div>
@@ -167,7 +189,7 @@
                         <a href="https://www.instagram.com/adityakumarsrivasta/"><i class="fa-brands fa-instagram"></i></a>
                         <a href="https://twitter.com/Aditya_lala_037"><i class="fa-brands fa-twitter"></i></a>
                     </div>
-                    <a href="images/my-cv.pdf" download class="btn btn2">Download CV</a>
+                    <a href="images/Resume - Aditya Kumar Srivastava.pdf" download class="btn btn2">Download CV</a>
                 </div>
                 <div class="contact-right">
                     <form name="submit-to-google-sheet">
@@ -182,6 +204,35 @@
         </div>
     </div>
  <script>
+
+    const roles = ["Solution Architect", "Cloud Architect", "DevSecOps", "Cloud Engineer"];
+    let roleIndex = 0;
+    const el = document.getElementById("typed-text");
+    const glitchChars = "!@#$%^&*<>?/|";
+
+    function scramble(target, cb) {
+        let iter = 0;
+        const interval = setInterval(() => {
+            el.textContent = target.split("").map((c, idx) =>
+                idx < iter ? c : glitchChars[Math.floor(Math.random() * glitchChars.length)]
+            ).join("");
+            el.classList.add("glitching");
+            if (iter >= target.length) {
+                clearInterval(interval);
+                el.textContent = target;
+                el.classList.remove("glitching");
+                cb && cb();
+            }
+            iter++;
+        }, 40);
+    }
+
+    function cycle() {
+        roleIndex = (roleIndex + 1) % roles.length;
+        scramble(roles[roleIndex], () => setTimeout(cycle, 1000));
+    }
+
+    scramble(roles[0], () => setTimeout(cycle, 1000));
 
     var tablinks = document.getElementsByClassName("tab-links");
     var tabcontents = document.getElementsByClassName("tab-contents");

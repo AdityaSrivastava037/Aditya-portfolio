@@ -27,6 +27,10 @@ nav{
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    padding: 20px 0;
+}
+nav ul{
+    margin-left: auto;
 }
 
 .logo{
@@ -69,6 +73,27 @@ nav ul li a:hover::after{
 .header-text h1 span{
     color: #ff004f;
 }
+.typed-role {
+    font-size: 40px;
+    font-weight: 600;
+    margin-top: 15px;
+    color: #fff;
+}
+.typed-role #typed-text {
+    color: #ff004f;
+    position: relative;
+}
+.typed-role #typed-text.glitching {
+    animation: glitch 0.4s steps(1) forwards;
+}
+@keyframes glitch {
+    0%   { text-shadow:  2px 0 #0ff, -2px 0 #f0f; transform: skewX(-5deg); }
+    20%  { text-shadow: -2px 0 #0ff,  2px 0 #f0f; transform: skewX(5deg); }
+    40%  { text-shadow:  2px 0 #f0f, -2px 0 #0ff; transform: skewX(-3deg); }
+    60%  { text-shadow: -1px 0 #0ff,  1px 0 #f0f; transform: skewX(3deg); }
+    80%  { text-shadow:  1px 0 #f0f, -1px 0 #0ff; transform: skewX(-1deg); }
+    100% { text-shadow: none; transform: skewX(0); }
+}
 /* ------------- about------------ */
 #about{
     padding: 80px 0;
@@ -81,14 +106,15 @@ nav ul li a:hover::after{
 }
 
 .about-col-1{
-    flex-basis: 35%;
+    flex-basis: 42%;
 }
 .about-col-1 img{
     width: 100%;
-    border-radius: 15px; 
+    border-radius: 15px;
+    object-fit: cover;
 }
 .about-col-2{
-    flex-basis: 60%;
+    flex-basis: 55%;
 }
 
 .sub-title{
@@ -108,7 +134,7 @@ nav ul li a:hover::after{
     cursor: pointer;
     position: relative;
 }
-.tab-titles::after{
+.tab-links::after{
     content: '';
     width: 0;
     height: 3px;
@@ -123,6 +149,10 @@ nav ul li a:hover::after{
     width: 50%;
 }
 
+.tab-contents ul{
+    margin: 0;
+    padding: 0;
+}
 .tab-contents ul li{
     list-style: none;
     margin: 10px 0;
@@ -138,10 +168,6 @@ nav ul li a:hover::after{
     display: block;
 }
 
-/* ----------------services--------------- */
-#services{
-    padding: 30px 0;
-}
 .services-list{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -243,7 +269,7 @@ nav ul li a:hover::after{
     width: fit-content;
     border: 1px solid #ff004f;
     padding: 14px 50px;
-    border-radius: 6 px;
+    border-radius: 6px;
     text-decoration: none;
     color: #fff;
     transition: background 0.5s;
@@ -307,16 +333,106 @@ form btn2{
     cursor: pointer;
 }
 footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
+    position: relative;
     width: 100%;
     text-align: center;
     color: white;
     background-color: rgb(58, 55, 55);
+    padding: 20px 0;
 }
+/* ---------------work experience timeline----------- */
+#experience {
+    padding: 60px 0;
+}
+.timeline {
+    position: relative;
+    padding-left: 40px;
+    margin-top: 50px;
+}
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: #ff004f;
+}
+.timeline-item {
+    position: relative;
+    margin-bottom: 50px;
+}
+.timeline-dot {
+    position: absolute;
+    left: -36px;
+    top: 6px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #ff004f;
+    border: 3px solid #080808;
+    box-shadow: 0 0 0 3px #ff004f;
+}
+.timeline-content {
+    background: #262626;
+    padding: 30px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+.timeline-content:hover {
+    transform: translateX(6px);
+}
+.timeline-header {
+    margin-bottom: 20px;
+}
+.timeline-header h2 {
+    font-size: 26px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 8px;
+}
+.timeline-company {
+    display: inline-block;
+    color: #ff004f;
+    font-size: 15px;
+    margin-right: 20px;
+}
+.timeline-company i, .timeline-date i {
+    margin-right: 6px;
+}
+.timeline-date {
+    display: inline-block;
+    color: #ababab;
+    font-size: 14px;
+}
+.timeline-points {
+    list-style: none;
+    padding: 0;
+    color: #ababab;
+}
+.timeline-points li {
+    padding: 6px 0 6px 20px;
+    position: relative;
+    font-size: 14px;
+    line-height: 1.6;
+}
+.timeline-points li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: #ff004f;
+}
+.timeline-points li strong {
+    color: #fff;
+}
+
+/* ---------------certifications----------- */
+#certifications {
+    padding: 30px 0;
+}
+
 /* ---------------css for small screens----------- */
-nav .fas{
+nav .fa-bars, nav .fa-times{
     display: none;
 }
 @media only screen and (max-width: 600px){
@@ -330,8 +446,10 @@ nav .fas{
     .header-text h1{
         font-size: 25px;
     }
-    nav .fas{
+    nav .fa-bars{
         display: block;
+        cursor: pointer;
+        font-size: 25px;
     }
     nav ul{
         background: #ff004f;
@@ -343,12 +461,14 @@ nav .fas{
         padding-top: 50px;
         z-index: 2;
         transition: right 0.5s;
+        margin-left: 0;
     }
     nav ul li{
         display: block;
         margin: 25px;
     }
-    nav ul .fas{
+    nav .fa-times{
+        display: block;
         position: absolute;
         top: 25px;
         left: 25px;
@@ -372,6 +492,19 @@ nav .fas{
     }
     .contact-left, .contact-right{
         flex-basis: 100%;
+    }
+    .timeline {
+        padding-left: 25px;
+    }
+    .timeline-dot {
+        left: -21px;
+    }
+    .timeline-header h2 {
+        font-size: 20px;
+    }
+    .timeline-company, .timeline-date {
+        display: block;
+        margin-bottom: 4px;
     }
 }
 #msg{
